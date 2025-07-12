@@ -1,0 +1,400 @@
+/* ==================== VARIABLES Y ESTILOS BASE ==================== */
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #4dabf7;
+    --dark-color: #003366;
+    --text-color: #333;
+    --light-text-color: #f8f9fa;
+    --background-color: #f4f7f6;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.section {
+    padding: 4rem 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: var(--dark-color);
+}
+
+/* ==================== HEADER / MENÚ ==================== */
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    /* Asegúrate de que aquí esté tu color de fondo oscuro deseado */
+    background-color: rgba(0, 74, 173); /* Ejemplo con un color oscuro */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav {
+    height: 4.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    text-decoration: none;
+}
+
+.nav-logo img {
+    height: 40px; 
+    width: auto;
+    display: block;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #ffffff !important; /* <--- AQUÍ ESTÁ LA MAGIA */
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color) !important; /* <--- TAMBIÉN AQUÍ PARA EL HOVER */
+}
+
+.nav-toggle {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    color: #ffffff !important; /* <--- Y AQUÍ PARA EL ICONO MÓVIL */
+}
+
+
+/* ===== NUEVA REGLA PARA CONTROLAR EL TAMAÑO DEL LOGO ===== */
+.nav-logo img {
+    height: 40px; /* Puedes ajustar este valor */
+    width: auto;
+    display: block;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-toggle {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+/* ==================== BANNER (HERO) ==================== */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    color: var(--light-text-color);
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==================== PRODUCTO ==================== */
+.product-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.subsection-title {
+    text-align: center;
+    color: var(--dark-color);
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.components-grid, .gallery-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* --- ESTILOS PARA EL EFECTO HOVER --- */
+.component-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-image-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-image-wrapper img {
+    display: block;
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #fff;
+    transition: transform 0.35s ease-in-out;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 46, 94, 0.9);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.35s ease-in-out;
+    padding: 1rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    margin: 0;
+}
+        
+.component-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.component-card:hover .card-image-wrapper img {
+    transform: scale(1.1);
+}
+
+.component-card .card-title {
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 8px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ==================== TESTIMONIOS ==================== */
+#testimonios {
+    background-color: #fff;
+}
+
+.testimonials-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.testimonial-card {
+    background: var(--background-color);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* ==================== CONTACTO ==================== */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.contact-form h3, .contact-map h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--dark-color);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.map-container {
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ==================== FOOTER ==================== */
+.footer {
+    background-color: rgba(0, 74, 173);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* ==================== MEDIA QUERIES (RESPONSIVE) ==================== */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 4.5rem;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--light-text-color);
+        padding: 2rem;
+        transition: right 0.4s;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+    
+    .show-menu {
+        right: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
